@@ -1,19 +1,35 @@
 import React from 'react';
-import {Text, View, Vibration, Alert, Linking, Button, Image } from 'react-native';
-import {Card} from 'react-native-elements';
+import { ScrollView, View, RefreshControl, Text, Vibration, Alert, Linking, Button, Image } from 'react-native';
+import { Card } from 'react-native-elements';
 
 class HomeComponent extends React.Component{
 	constructor(props){
 		super(props);
+		console.log('HomeComponent Constructor')
+		this.state = {
+			refreshing: false
+		};
 	}
 	componentWillMount() {
-		//this.alertAndVibrate(1000);
+		//this._alertAndVibrate(1000);
 		console.log('App Mounted');
 	}
-	onAlertPressed = () => {
-		this.alertAndVibrate(5000);
+	_onRefresh = () => {
+		//setTimeout(()=> this.state.refreshing = false, 6000);
+		this._wait(2000);
+		this._alertAndVibrate();
 	}
-	alertAndVibrate = (delay) => {
+	_wait = (ms) => {
+		var start = new Date().getTime();
+		var end = start;
+		while(end < start + ms) {
+		  end = new Date().getTime();
+	   }
+	}
+	_onAlertPressed = () => {
+		this._alertAndVibrate(1000);
+	}
+	_alertAndVibrate = (delay) => {
 		setTimeout(function(){
 			Vibration.vibrate([300, 300, 1000], true);
 			Alert.alert(
@@ -33,24 +49,27 @@ class HomeComponent extends React.Component{
 				],
 				{cancelable: false}
 			);
-		}, delay || 1000); 
+		}, delay || 100); 
 	}
-	render() {
+	render() { 
 		return (
-			<View style={this.props.styles.container}>
-				<View style={{marginBottom:20}}>
+			<ScrollView 
+				contentContainerStyle={{backgroundColor:'#fff',justifyContent:'center',alignItems:'center',flex:1}} 
+				horizontal={false} 
+				refreshControl={<RefreshControl enabled={this.props.allowRefresh} refreshing={this.state.refreshing} onRefresh={this._onRefresh} />}>
+				<View style={{marginBottom:20,alignItems:'center',justifyContent:'center'}}>
 					<Image source={require('../assets/images/logo.png')} />
 				</View>
 				<Card title="Custom Apps by Indasys" style={[{color: '#009', justifyContent: 'center', alignItems: 'center'}]}>
-					<Text>
+					<Text style={{textAlign: 'center'}}>
 						Indasys is a custom software and app devloper with locations in Saint Petersburg, FL, and New York, NY.
 						Indasys builds line of business apps for the browser and all major mobile platforms.
 					</Text>
 					<Text style={{color: '#009', display: 'none' }} onPress={() => Linking.openURL('http://www.indasysllc.com/')}>
 						Go To Indasys Website
 					</Text>
-					<View style={{margin: 20}}>
-						<Button title="VIEW INDASYS WEBSITE" containerViewStyle={{margin: '10'}} onPress={() => Linking.openURL('http://www.indasysllc.com/')} />
+					<View style={this.props.styles.buttonContainer}>
+						<Button title="VIEW INDASYS WEBSITE" onPress={() => Linking.openURL('http://www.indasysllc.com/')} />
 					</View>
 				</Card>
 				{/*
@@ -60,9 +79,11 @@ class HomeComponent extends React.Component{
 					<Text>Changes you make will automatically reload.</Text>
 					<Text>Shake your phone to open the developer menu.</Text>
 				</View>
+				<View style={this.props.styles.buttonContainer}>
+					<Button title="TEST ALERT" onPress={this._onAlertPressed} />
+				</View>
 				*/}
-				<Button title="TEST ALERT (5 second delay)" onPress={this.onAlertPressed} />
-			</View>
+			</ScrollView>
 		);
 	}
 }
