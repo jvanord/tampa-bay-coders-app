@@ -1,0 +1,15 @@
+{
+	"expo": {
+		"sdkVersion": "27.0.0",
+		"name": "Hello from Indasys",
+		"icon": "./assets/images/app-icon.png",
+		"version": "0.1.0",
+		"slug": "hello-world",
+		"ios": {
+		  "bundleIdentifier": "com.indasys.helloworld"
+		},
+		"android": {
+		  "package": "com.indasys.helloworld"
+		}
+	}
+}
