@@ -2,6 +2,7 @@
 	"expo": {
 		"sdkVersion": "27.0.0",
 		"name": "Hello from Indasys",
+		"description": "This app doesn't do anything except demonstrate building, testing, and deploying apps.",
 		"icon": "./assets/images/app-icon.png",
 		"version": "0.1.0",
 		"slug": "hello-world",
