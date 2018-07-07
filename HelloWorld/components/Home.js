@@ -34,7 +34,7 @@ class HomeComponent extends React.Component{
 			Vibration.vibrate([300, 300, 1000], true);
 			Alert.alert(
 				'Hello from Indasys',
-				'This is just a simple app to test the quick creation and deployment of cross-development apps. It doesn\'t do anything. Well, it opens our website - that\'s something.',
+				'This is just a simple app to test the quick creation and deployment of cross-platform mobile apps. It doesn\'t do anything. Well, it opens our website - that\'s something.',
 				[
 					//{
 					//	text: 'Ask me later',
