@@ -72,6 +72,9 @@ class HomeComponent extends React.Component{
 						<Button title="VIEW INDASYS WEBSITE" onPress={() => Linking.openURL('http://www.indasysllc.com/')} />
 					</View>
 				</Card>
+				<View style={{margin:10}}>
+					<Text style={{fontSize:10}}>Pull down for popup message.</Text>
+				</View>
 				{/*
 				<View style={{margin:10,justifyContent:'center',alignItems: 'center'}}>
 					<Text>Developer Instructions:</Text>
