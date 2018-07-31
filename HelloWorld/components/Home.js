@@ -33,7 +33,7 @@ class HomeComponent extends React.Component{
 		setTimeout(function(){
 			Vibration.vibrate([300, 300, 1000], true);
 			Alert.alert(
-				'Hello from Tampa Bay Coders',
+				'Hello from Tampa Bay Coders', 
 				'This is just a simple app to test the quick creation and deployment of cross-platform mobile apps. It doesn\'t do anything. Well, it opens our website - that\'s something.',
 				[
 					//{
@@ -60,16 +60,17 @@ class HomeComponent extends React.Component{
 				<View style={{marginBottom:20,alignItems:'center',justifyContent:'center'}}>
 					<Image source={require('../assets/images/logo.png')} />
 				</View>
-				<Card title="Custom Apps by Indasys" style={[{color: '#009', justifyContent: 'center', alignItems: 'center'}]}>
+				<Card title="Tampa Bay Coders" style={[{color: '#009', justifyContent: 'center', alignItems: 'center'}]}>
 					<Text style={{textAlign: 'center'}}>
-						Indasys is a custom software and app devloper with locations in Saint Petersburg, FL, and New York, NY.
-						Indasys builds line of business apps for the browser and all major mobile platforms.
+						Tampa Bay Coders is a community of app devlopers and software experts.
+						We are headquartered in Saint Petersburg, FL, but we work with clients and deveolopers from all over the world.
+						We specialize in building line of business apps for the browser, iOS, and Android.
 					</Text>
 					<Text style={{color: '#009', display: 'none' }} onPress={() => Linking.openURL('https://www.tampabaycoders.com/')}>
-						Go To Indasys Website
+						View Website
 					</Text>
 					<View style={this.props.styles.buttonContainer}>
-						<Button title="VIEW TAMPA BAY CODERS WEBSITE" onPress={() => Linking.openURL('https://www.tampabaycoders.com/')} />
+						<Button title="VIEW WEBSITE" onPress={() => Linking.openURL('https://www.tampabaycoders.com/')} />
 					</View>
 				</Card>
 				<View style={{margin:10}}>
