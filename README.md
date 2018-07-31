@@ -1,8 +1,8 @@
-# Hello from Indasys
+# Tampa Bay Coders - Mobile App
 
-A simple testing app.
+A simple mobile app created with React Native to test and demonstrate for Tampa Bay Coders clients.
 
-## Projects
+## Front End
 
-* HelloWorld => The React-Native Front-End
+The front-end app is just a simple showcase of basic app functionality.
  
