@@ -33,7 +33,7 @@ class HomeComponent extends React.Component{
 		setTimeout(function(){
 			Vibration.vibrate([300, 300, 1000], true);
 			Alert.alert(
-				'Hello from Indasys',
+				'Hello from Tampa Bay Coders',
 				'This is just a simple app to test the quick creation and deployment of cross-platform mobile apps. It doesn\'t do anything. Well, it opens our website - that\'s something.',
 				[
 					//{
@@ -65,11 +65,11 @@ class HomeComponent extends React.Component{
 						Indasys is a custom software and app devloper with locations in Saint Petersburg, FL, and New York, NY.
 						Indasys builds line of business apps for the browser and all major mobile platforms.
 					</Text>
-					<Text style={{color: '#009', display: 'none' }} onPress={() => Linking.openURL('http://www.indasysllc.com/')}>
+					<Text style={{color: '#009', display: 'none' }} onPress={() => Linking.openURL('https://www.tampabaycoders.com/')}>
 						Go To Indasys Website
 					</Text>
 					<View style={this.props.styles.buttonContainer}>
-						<Button title="VIEW INDASYS WEBSITE" onPress={() => Linking.openURL('http://www.indasysllc.com/')} />
+						<Button title="VIEW TAMPA BAY CODERS WEBSITE" onPress={() => Linking.openURL('https://www.tampabaycoders.com/')} />
 					</View>
 				</Card>
 				<View style={{margin:10}}>
